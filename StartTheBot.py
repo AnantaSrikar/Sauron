@@ -1,5 +1,6 @@
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, MessageHandler, Filters
+from utils import pushToSheet
 
 markdown = "Markdown"
 
@@ -19,25 +20,20 @@ def databaseUpdates(update, context):
 
 	if(update.message.text.startswith('#infected')):
 		infectionData = update.message.text.split(' ')
-		if(len(infectionData) != 4):
-			update.message.reply_text('Invalid format, please try again')
+		if(len(infectionData) != 7):
+			update.message.reply_text('Invalid format, please try again') # date time state district number link
 		else:
-			replyText = ''
-			replyText += 'City : {}\n'.format(infectionData[1])
-			replyText += 'Count : {}\n'.format(infectionData[2])
-			replyText += 'Link : {}\n'.format(infectionData[3])
-			update.message.reply_text(replyText)
+			pushToSheet.infection_update(infectionData)
+			update.message.reply_text('I have updated my database successfully!')
 	
 	elif(update.message.text.startswith('#death')):
+		print('Got the death')
 		deathData = update.message.text.split(' ')
-		if(len(infectionData) != 4):
+		if(len(deathData) != 7):
 			update.message.reply_text('Invalid format, please try again')
 		else:
-			replyText = ''
-			replyText += 'City : {}\n'.format(deathData[1])
-			replyText += 'Count : {}\n'.format(deathData[2])
-			replyText += 'Link : {}\n'.format(deathData[3])
-			update.message.reply_text(replyText)
+			pushToSheet.death_update(deathData)
+			update.message.reply_text('I have updated my database successfully!')
 
 def main():
 

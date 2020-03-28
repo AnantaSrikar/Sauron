@@ -9,12 +9,13 @@ tokens = []
 def getTokens():
 	fileManager = open('res/TOKENS.txt', 'r')  
 	tokenText = fileManager.read()
-	global tokens
 	tokens = tokenText.split('\n')
+	return tokens
+
+tokens = getTokens()
 
 def start(update, context):
 	update.message.reply_text("Hey there {}! I'm still awake".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
-
 
 def databaseUpdates(update, context):
 

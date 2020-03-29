@@ -25,8 +25,7 @@ def databaseUpdates(update, context):
 			update.message.reply_text('Invalid format, please try again') # date time state district number link
 		else:
 			update.message.reply_text(pushToSheet.infection_update(infectionData))
-			
-	
+
 	elif(update.message.text.startswith('#death')):
 		print('Got the death')
 		deathData = update.message.text.split(' ')
@@ -34,6 +33,9 @@ def databaseUpdates(update, context):
 			update.message.reply_text('Invalid format, please try again')
 		else:
 			update.message.reply_text(pushToSheet.death_update(deathData))
+
+	elif ('ok boomer' in update.message.text.lower() or 'boomer' in update.message.text.lower()):
+		context.bot.send_photo(update.message.chat.id, photo = open('res/ok_boomer.jpg', 'rb'), reply_to_message_id = update.message.message_id)
 
 def main():
 

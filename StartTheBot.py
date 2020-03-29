@@ -30,7 +30,6 @@ def help(update, context):
 	fileManager.close()
 
 def databaseUpdates(update, context):
-
 	if(update.message.text.startswith('#infected')): # infectionData = ['#infected', date, time, state, district, count, link]
 		infectionData = update.message.text.split(' ')
 		if(len(infectionData) != 5):
@@ -54,13 +53,19 @@ def databaseUpdates(update, context):
 			scoreManager.updatePoints(update.message.from_user.id)
 
 	elif(update.message.text.startswith('#reportError')):
+		# TODO : add report error feature
 		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 
 	elif(update.message.text.startswith('#getLink')):
+		# TODO : send a 'view only' link
 		update.message.reply_text('This is the link : {}'.format(tokens[1]))
 	
+	elif(update.message.text.startswith('#leaderBoard')):
+		# TODO : show the leaderboard
+		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+	
 	elif(update.message.text.startswith('#')):
-		update.message.reply_text("Yo what?! {} please check what you've entered! Try /help for more intel".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+		update.message.reply_text("Yo what?! {} Please check what you've entered! Try /help for more intel".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 
 	elif ('ok boomer' in update.message.text.lower() or 'boomer' in update.message.text.lower()):
 		context.bot.send_photo(update.message.chat.id, photo = open('res/ok_boomer.jpg', 'rb'), reply_to_message_id = update.message.message_id)

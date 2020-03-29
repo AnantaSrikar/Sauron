@@ -1,8 +1,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from StartTheBot import getTokens
-from utils.validateDetails import validate_date, validate_time
-
+from utils.validateDetails import verifyStateDistrict
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('res/credentials.json',scope)
 
@@ -19,30 +18,30 @@ def death_update(dataList):
 	next_row = next_available_row(sheet)
 	column = "A"
 	i = 1
-	if(validate_date(dataList[1]) and validate_time(dataList[2])):
+	if(verifyStateDistrict(dataList[3], dataList[4]) == 0):
 		while(column < "H"):
 			if(column != "E"):
 				sheet.update_acell("{}{}".format(column,next_row), dataList[i])
 				i += 1
 			column = chr(ord(column) + 1)
 		return 'I have updated my database successfully!'
-	elif(not validate_date(dataList[1])):
-		return 'Invalid date format, try again'
-	elif(not validate_time(dataList[2])):
-		return 'Invalid time format, try again'
+	elif(verifyStateDistrict(dataList[3], dataList[4]) == 1):
+		return 'Unable to find {} in {}, please check and try again'.format(dataList[4], dataList[3])
+	elif(verifyStateDistrict(dataList[3], dataList[4]) == 2):
+		return 'Unable to find {}, please check and try again'.format(dataList[3])
 
 def infection_update(dataList):
 	next_row = next_available_row(sheet)
 	column = "A"
 	i = 1
-	if(validate_date(dataList[1]) and validate_time(dataList[2])):
+	if(verifyStateDistrict(dataList[3], dataList[4]) == 0):
 		while(column < "H"):
 			if(column != "F"):
 				sheet.update_acell("{}{}".format(column,next_row), dataList[i])
 				i += 1
 			column = chr(ord(column) + 1)
 		return 'I have updated my database successfully!'
-	elif(not validate_date(dataList[1])):
-		return 'Invalid date format, try again'
-	elif(not validate_time(dataList[2])):
-		return 'Invalid time format, try again'
+	elif(verifyStateDistrict(dataList[3], dataList[4]) == 1):
+		return 'Unable to find {} in {}, please check and try again'.format(dataList[4], dataList[3])
+	elif(verifyStateDistrict(dataList[3], dataList[4]) == 2):
+		return 'Unable to find {}, please check and try again'.format(dataList[3])

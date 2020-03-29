@@ -1,21 +1,3 @@
-from datetime import datetime
-import time
-
-def validate_date(dateString):
-	day, month, year = dateString.split('/')
-	try:
-		datetime(int(year), int(month), int(day))
-		return True
-	except ValueError:
-		return False
-
-def validate_time(timeString):
-	try:
-		time.strptime(timeString, '%H:%M')
-		return True
-	except ValueError:
-		return False
-
 globalData = {}
 def get_districtsData():
 	fileManager = open('res/districts.txt', 'r')
@@ -29,4 +11,12 @@ def get_districtsData():
 		elif(districtBoi.startswith('\t')):
 			globalData[curState].append(districtBoi.lstrip())
 
-	return globalData
+get_districtsData()
+
+def verifyStateDistrict(stateName, districtName):
+	if(stateName in globalData):  #seeing if the state exists
+		if(districtName in globalData[stateName]):  # seeing if the district exists inside the state
+			return 0
+		else:
+			return 1 # state found but no district in it
+	return 2         # coudn't find the state

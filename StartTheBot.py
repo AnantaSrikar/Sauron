@@ -25,7 +25,7 @@ def get_dateTime():
 
 def databaseUpdates(update, context):
 
-	if(update.message.text.startswith('#infected')):
+	if(update.message.text.startswith('#infected')): # infectionData = ['#infected', date, time, state, district, count, link]
 		infectionData = update.message.text.split(' ')
 		if(len(infectionData) != 5):
 			update.message.reply_text('Invalid format, please try again') # state district number link

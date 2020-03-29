@@ -39,7 +39,7 @@ def databaseUpdates(update, context):
 			# TODO : check if the case already exists
 			infectionData.insert(1, get_dateTime()[0])
 			infectionData.insert(2, get_dateTime()[1])
-			update.message.reply_text(pushToSheet.infection_update(infectionData) + '\nYour used_id : {}\ntype : {}'.format(update.message.from_user.id, type(update.message.from_user.id)))
+			update.message.reply_text(pushToSheet.infection_update(infectionData))
 			scoreManager.updatePoints(update.message.from_user.id)
 
 	elif(update.message.text.startswith('#death')):
@@ -50,14 +50,14 @@ def databaseUpdates(update, context):
 			# TODO : check if the case already exists
 			deathData.insert(1, get_dateTime()[0])
 			deathData.insert(2, get_dateTime()[1])
-			update.message.reply_text(pushToSheet.death_update(deathData) + '\nYour used_id : {}\ntype : {}'.format(update.message.from_user.id, type(update.message.from_user.id)))
+			update.message.reply_text(pushToSheet.death_update(deathData))
 			scoreManager.updatePoints(update.message.from_user.id)
 
 	elif(update.message.text.startswith('#reportError')):
 		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 
 	elif(update.message.text.startswith('#getLink')):
-		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+		update.message.reply_text('This is the link : {}'.format(tokens[1]))
 	
 	elif(update.message.text.startswith('#')):
 		update.message.reply_text("Yo what?! {} please check what you've entered! Try /help for more intel".format(update.message.from_user.mention_markdown()), parse_mode = markdown)

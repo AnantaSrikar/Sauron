@@ -1,7 +1,7 @@
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from datetime import datetime
-from utils import pushToSheet
+from utils import pushToSheet, scoreManager
 
 markdown = "Markdown"
 
@@ -36,24 +36,31 @@ def databaseUpdates(update, context):
 		if(len(infectionData) != 5):
 			update.message.reply_text('Invalid format, please try again') # state district number link
 		else:
+			# TODO : check if the case already exists
 			infectionData.insert(1, get_dateTime()[0])
 			infectionData.insert(2, get_dateTime()[1])
-			update.message.reply_text(pushToSheet.infection_update(infectionData))
+			update.message.reply_text(pushToSheet.infection_update(infectionData) + '\nYour used_id : {}\ntype : {}'.format(update.message.from_user.id, type(update.message.from_user.id)))
+			scoreManager.updatePoints(update.message.from_user.id)
 
 	elif(update.message.text.startswith('#death')):
 		deathData = update.message.text.split(' ')
 		if(len(deathData) != 5):
 			update.message.reply_text('Invalid format, please try again')
 		else:
+			# TODO : check if the case already exists
 			deathData.insert(1, get_dateTime()[0])
 			deathData.insert(2, get_dateTime()[1])
-			update.message.reply_text(pushToSheet.death_update(deathData))
+			update.message.reply_text(pushToSheet.death_update(deathData) + '\nYour used_id : {}\ntype : {}'.format(update.message.from_user.id, type(update.message.from_user.id)))
+			scoreManager.updatePoints(update.message.from_user.id)
 
 	elif(update.message.text.startswith('#reportError')):
 		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 
 	elif(update.message.text.startswith('#getLink')):
 		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+	
+	elif(update.message.text.startswith('#')):
+		update.message.reply_text("Yo what?! {} please check what you've entered! Try /help for more intel".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 
 	elif ('ok boomer' in update.message.text.lower() or 'boomer' in update.message.text.lower()):
 		context.bot.send_photo(update.message.chat.id, photo = open('res/ok_boomer.jpg', 'rb'), reply_to_message_id = update.message.message_id)

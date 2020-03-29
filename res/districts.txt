@@ -331,7 +331,7 @@
 	Gandhinagar
 	Mahesana
 	Kachchh
-## Maharastra
+## Maharashtra
 	Sindhugurg
 	Ratnagiri
 	Raigarh

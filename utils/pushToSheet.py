@@ -1,8 +1,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from StartTheBot import getTokens
-from datetime import datetime
-import time
+from utils.validateDetails import validate_date, validate_time
 
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('res/credentials.json',scope)
@@ -15,21 +14,6 @@ sheet = client.open_by_url(tokens[1]).worksheet('Sheet1')
 def next_available_row(worksheet):
 	str_list = list(filter(None, worksheet.col_values(1)))
 	return str(len(str_list)+1)
-
-def validate_date(dateString):
-	day, month, year = dateString.split('/')
-	try:
-		datetime(int(year), int(month), int(day))
-		return True
-	except ValueError:
-		return False
-
-def validate_time(timeString):
-	try:
-		time.strptime(timeString, '%H:%M')
-		return True
-	except ValueError:
-		return False
 
 def death_update(dataList):
 	next_row = next_available_row(sheet)

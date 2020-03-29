@@ -24,8 +24,8 @@ def databaseUpdates(update, context):
 		if(len(infectionData) != 7):
 			update.message.reply_text('Invalid format, please try again') # date time state district number link
 		else:
-			pushToSheet.infection_update(infectionData)
-			update.message.reply_text('I have updated my database successfully!')
+			update.message.reply_text(pushToSheet.infection_update(infectionData))
+			
 	
 	elif(update.message.text.startswith('#death')):
 		print('Got the death')
@@ -33,8 +33,7 @@ def databaseUpdates(update, context):
 		if(len(deathData) != 7):
 			update.message.reply_text('Invalid format, please try again')
 		else:
-			pushToSheet.death_update(deathData)
-			update.message.reply_text('I have updated my database successfully!')
+			update.message.reply_text(pushToSheet.death_update(deathData))
 
 def main():
 

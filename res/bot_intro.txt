@@ -1,9 +1,23 @@
 Hi there! I am the BigDaddyScaper, here to help you contribute to covindia.com.
 Firstly, the covindia team is super glad that you've come to help us.
-Ok so let's get to the point, to contribute, you need to know somethings.
+Ok so let's get to the point, to contribute, you need to know some things.
+Below are some of the commands you have control of, use them judiciously.
+
 #infected state_name district_name count link : to submit a new infection
+
+Ex: #infected Maharashtra Pune 4 toi.com
+
 #death state_name district_name count link : to submit a new death
+
+Ex : #death Delhi Delhi 1 toi.com
+
 #getLink : to get the link of the sheet
 #reportError : to report an error
+#leaderBoard : To see the top contributors
 
-Please don't ping the admins unnecessarily
+/help : To get this helpBox
+
+Don't ping the mods unnecessarily.
+Have fun!
+
+PS : try sending "ok boomer"

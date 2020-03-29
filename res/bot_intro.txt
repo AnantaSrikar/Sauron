@@ -1,0 +1,9 @@
+Hi there! I am the BigDaddyScaper, here to help you contribute to covindia.com.
+Firstly, the covindia team is super glad that you've come to help us.
+Ok so let's get to the point, to contribute, you need to know somethings.
+#infected state_name district_name count link : to submit a new infection
+#death state_name district_name count link : to submit a new death
+#getLink : to get the link of the sheet
+#reportError : to report an error
+
+Please don't ping the admins unnecessarily

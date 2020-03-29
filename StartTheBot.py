@@ -13,15 +13,21 @@ def getTokens():
 	tokens = tokenText.split('\n')
 	return tokens
 
-tokens = getTokens()
-
-def start(update, context):
-	update.message.reply_text("Hey there {}! I'm still awake".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
-
 def get_dateTime():
 	date = datetime.now().strftime("%d/%m/20%y")
 	time = datetime.now().strftime("%H:%M")
 	return [date, time]
+
+tokens = getTokens()
+
+def start(update, context):
+	update.message.reply_text("Hey there {}! I'm still awake! Try /help for more intel.".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+
+def help(update, context):
+	fileManager = open('res/bot_intro.txt', 'r')
+	bot_intro = fileManager.read()
+	update.message.reply_text(bot_intro)
+	fileManager.close()
 
 def databaseUpdates(update, context):
 
@@ -43,6 +49,12 @@ def databaseUpdates(update, context):
 			deathData.insert(2, get_dateTime()[1])
 			update.message.reply_text(pushToSheet.death_update(deathData))
 
+	elif(update.message.text.startswith('#reportError')):
+		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+
+	elif(update.message.text.startswith('#getLink')):
+		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+
 	elif ('ok boomer' in update.message.text.lower() or 'boomer' in update.message.text.lower()):
 		context.bot.send_photo(update.message.chat.id, photo = open('res/ok_boomer.jpg', 'rb'), reply_to_message_id = update.message.message_id)
 
@@ -56,6 +68,7 @@ def main():
 	dispatcher = updater.dispatcher
 
 	dispatcher.add_handler(CommandHandler('start', start))
+	dispatcher.add_handler(CommandHandler('help', help))
 	dispatcher.add_handler(MessageHandler(Filters.text, databaseUpdates))
 
 	print('Bot started running!')

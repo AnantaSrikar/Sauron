@@ -41,7 +41,7 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 			infectionData.insert(1, get_dateTime()[0])
 			infectionData.insert(2, get_dateTime()[1]) # infectionData = ['#infected', date, time, state, district, count, link]
 			update.message.reply_text(pushToSheet.infection_update(infectionData))
-			scoreManager.updatePoints(update.message.from_user.id)
+			scoreManager.updatePoints(update.message.from_user.id, update.message.from_user.full_name)
 
 	elif(update.message.text.startswith('#death')): # similar to #infected (sorry for being lazy)
 		deathData = update.message.text.split(' ')
@@ -52,7 +52,7 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 			deathData.insert(1, get_dateTime()[0])
 			deathData.insert(2, get_dateTime()[1])
 			update.message.reply_text(pushToSheet.death_update(deathData))
-			scoreManager.updatePoints(update.message.from_user.id)
+			scoreManager.updatePoints(update.message.from_user.id, update.message.from_user.full_name)
 
 	elif(update.message.text.startswith('#reportError')): #this still has ti be made (I need help)
 		# TODO : add report error feature
@@ -68,7 +68,8 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 	
 	elif(update.message.text.startswith('#leaderBoard')): # this will reply with the leaderboard, almost done
 		# TODO : show the leaderboard
-		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+		update.message.reply_text(scoreManager.getLeaderBoard())
+		#update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 	
 	elif(update.message.text.startswith('#')): #i nvalid use of #, ex : #infection instead of #infected will send this
 		update.message.reply_text("Yo what?! {} Please check what you've entered! Try /help for more intel".format(update.message.from_user.mention_markdown()), parse_mode = markdown)

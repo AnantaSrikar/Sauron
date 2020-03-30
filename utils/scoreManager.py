@@ -1,6 +1,5 @@
 # To monitor and update the scores of users
 import json
-import os
 allContributors = {}
 
 def reloadData():

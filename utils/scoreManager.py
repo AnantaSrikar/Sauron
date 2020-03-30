@@ -1,3 +1,4 @@
+# To monitor and update the scores of users
 import json
 import os
 allContributors = {}
@@ -9,7 +10,7 @@ def reloadData():
 	except:
 		pass
 
-def updatePoints(userId):
+def updatePoints(userId): # this is used in the StartTheBot.py
 	userId = str(userId)
 	reloadData()
 	if (userId not in allContributors):

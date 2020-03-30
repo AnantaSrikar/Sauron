@@ -1,4 +1,7 @@
+# To validate the state and district entries made by contributors
+
 globalData = {}
+
 def get_districtsData():
 	fileManager = open('res/districts.txt', 'r')
 	districtText = fileManager.read()
@@ -13,7 +16,7 @@ def get_districtsData():
 
 get_districtsData()
 
-def verifyStateDistrict(stateName, districtName):
+def verifyStateDistrict(stateName, districtName): # this fuction is used in the final pushToSheet.py
 	if(stateName in globalData):  #seeing if the state exists
 		if(districtName in globalData[stateName]):  # seeing if the district exists inside the state
 			return 0

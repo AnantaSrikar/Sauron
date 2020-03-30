@@ -55,6 +55,9 @@ def databaseUpdates(update, context):
 	elif(update.message.text.startswith('#reportError')):
 		# TODO : add report error feature
 		update.message.reply_text('Hol up {}! This feature is being made'.format(update.message.from_user.mention_markdown()), parse_mode = markdown)
+	
+	elif(update.message.text.startswith('#districtList')):
+		context.bot.send_document(update.message.chat.id, document = open('res/districts.txt', 'rb'), reply_to_message_id = update.message.message_id)
 
 	elif(update.message.text.startswith('#getLink')):
 		# TODO : send a 'view only' link

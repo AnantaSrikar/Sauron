@@ -1,4 +1,4 @@
-Hi there! I am the BigDaddyScaper, here to help you contribute to covindia.com.
+Hi there! I am the Sauron, here to help you contribute to covindia.com.
 Firstly, the covindia team is super glad that you've come to help us.
 Ok so let's get to the point, to contribute, you need to know some things.
 Below are some of the commands you have control of, use them judiciously.
@@ -14,10 +14,11 @@ Ex : #death Delhi Delhi 1 toi.com
 #getLink : to get the link of the sheet
 #reportError : to report an error
 #leaderBoard : To see the top contributors
+#districtList : get the list of valid state and district entries
 
 /help : To get this helpBox
 
 Don't ping the mods unnecessarily.
 Have fun!
 
-PS : try sending "ok boomer"
+PS : don't even think of saying "ok boomer"

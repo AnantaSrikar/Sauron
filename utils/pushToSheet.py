@@ -1,6 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from StartTheBot import getTokens #resuing the function ;)
+from startSauron import getTokens #resuing the function ;)
 from utils.validateDetails import verifyStateDistrict
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('res/credentials.json',scope) # hidden, it's a secret
@@ -14,7 +14,7 @@ def next_available_row(worksheet): # returns the next available row in the sheet
 	str_list = list(filter(None, worksheet.col_values(1)))
 	return str(len(str_list)+1)
 
-def death_update(dataList): #used in StartTheBot.py
+def death_update(dataList): #used in startSauron.py
 	next_row = next_available_row(sheet)
 	column = "A"
 	i = 1
@@ -30,9 +30,9 @@ def death_update(dataList): #used in StartTheBot.py
 	elif(verifyStateDistrict(dataList[3], dataList[4]) == 2):
 		return 'Unable to find {}, please check and try again'.format(dataList[3])
 	
-	# the return is sent to StartTheBot.py, and is sent as a reply to the user
+	# the return is sent to startSauron.py, and is sent as a reply to the user
 
-def infection_update(dataList): # this too is used in StartTheBot.py, very similar to the above function
+def infection_update(dataList): # this too is used in startSauron.py, very similar to the above function
 	next_row = next_available_row(sheet)
 	column = "A"
 	i = 1

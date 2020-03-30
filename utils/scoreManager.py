@@ -10,7 +10,7 @@ def reloadData():
 	except:
 		pass
 
-def updatePoints(userId): # this is used in the StartTheBot.py
+def updatePoints(userId): # this is used in the startSauron.py
 	userId = str(userId)
 	reloadData()
 	if (userId not in allContributors):

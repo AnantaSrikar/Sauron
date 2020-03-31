@@ -26,4 +26,7 @@ def updatePoints(userId, username): # this is used in the startSauron.py
 
 def getLeaderBoard():
 	reloadData()
-	return str(allContributors)
+	scoreBoard = 'Current leaderBoard :\n\n'
+	for boi in allContributors:
+		scoreBoard += allContributors[boi][0] + ' : ' + str(allContributors[boi][1]) + '\n'
+	return scoreBoard

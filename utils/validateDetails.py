@@ -46,7 +46,7 @@ def approxName(stateName, districtName, errorType):
 
 def verifyStateDistrict(stateName, districtName): # this fuction is used in the final pushToSheet.py
 	if(stateName in globalData):  #seeing if the state exists
-		if(districtName in globalData[stateName]):  # seeing if the district exists inside the state
+		if(districtName in globalData[stateName] or districtName == 'dist_na'):  # seeing if the district exists inside the state
 			return [0]
 		else:
 			return [1, approxName(stateName, districtName, 1)] # state found but no district in it
@@ -84,3 +84,11 @@ def verifySpam(stateName, districtName, reportType):
 		return True
 	
 	return False
+
+
+def verifyNum(number):
+	try:
+		number = int(number)
+		return True
+	except:
+		return False

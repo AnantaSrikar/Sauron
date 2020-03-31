@@ -1,6 +1,6 @@
 ## Bihar
-	Paschim_Champaran
-	Purba_Champaran
+	West_Champaran
+	East_Champaran
 	Sitamarhi
 	Madhubani
 	Supaul
@@ -15,7 +15,7 @@
 	Gaya
 	Aurangabad_Bihar
 	Rohtas
-	Kaimur_Bhabua
+	Kaimur
 	Buxar
 	Bhojpur
 	Saran
@@ -23,9 +23,9 @@
 	Gopalganj
 	Muzaffarpur
 	Sheohar
-	Dharbanga
+	Darbhanga
 	Saharsa
-	Madhopura
+	Madhepura
 	Munger
 	Khagaria
 	Lakhisarai
@@ -42,7 +42,7 @@
 	Palamu
 	Chatra
 	Hazaribagh
-	Kodarma
+	Koderma
 	Giridih
 	Deoghar
 	Dumka
@@ -54,17 +54,17 @@
 	Bokaro
 	Ramgarh
 	Ranchi
-	Saraikela
-	Purbi_Singhbhum
-	Paschimi_Singhbhum
+	Saraikela_Kharsawan
+	East_Singhbhum
+	West_Singhbhum
 	Simdega
 	Gumla
 	Latehar
 	Lohardaga
 	Khunti
 ## West Bengal
-	Puruliya
-	Barddhaman
+	Purulia
+	Purba_Barddhaman
 	Birbhum
 	Murshidabad
 	Nadia
@@ -74,19 +74,19 @@
 	Paschim_Medinipur
 	Bankura
 	Hugli
-	Haora
+	Howrah
 	Kolkata
-	Maldah
+	Malda
 	Dakshin_Dinajpur
 	Uttar_Dinajpur
-	Darjiling
+	Darjeeling
 	Jalpaiguri
-	Koch_Bihar
+	Cooch_Bihar
 ## Sikkim
-	West_District
-	North_District
-	East_District
-	South_District
+	West_Sikkim
+	North_Sikkim
+	East_Sikkim
+	South_Sikkim
 ## Assam
 	Kokrajhar
 	Chirang
@@ -136,7 +136,7 @@
 	Serchhip
 	Lunglei
 	Lawngtlai
-	Saiha
+	Siaha
 ## Manipur
 	Tamenglong
 	Senapati
@@ -168,7 +168,7 @@
 	West_Siang
 	Upper_Siang
 	Dibang_Valley
-	Lower
+	Lower_Dibang_Valley
 	Lohit
 	Anjaw
 	Changlang
@@ -177,7 +177,7 @@
 	Lower_Subansiri
 	East_Siang
 ##Ladakh
-	Ladakh
+	Leh
 	Kargil
 ## Jammu and Kashmir
 	Kishtwar
@@ -196,7 +196,7 @@
 	Udhampur
 	Reasi
 	Kulgam
-	Shupiyan
+	Shopian
 	Badgam
 	Srinagar
 	Pulwama
@@ -207,12 +207,12 @@
 	Shimla
 	Sirmaur
 	Solan
-	Bilaspur
+	Bilaspur_Himachal
 	Una
 	Kangra
 	Kullu
 	Mandi
-	Hamirpur
+	Hamirpur_Himachal
 ## Punjab
 	Gurdaspur
 	Hoshiarpur
@@ -222,7 +222,7 @@
 	Sangrur
 	Mansa
 	Bathinda
-	Muktsar
+	Sri_Muktsar_Sahib
 	Firozpur
 	Tarn_Taran
 	Amritsar
@@ -242,7 +242,7 @@
 	Panipat
 	Sonipat
 	Jhajjar
-	Gurgaon
+	Gurugram
 	Faridabad
 	Palwal
 	Mewat
@@ -257,47 +257,47 @@
 	Jind
 	Rohtak
 ## Uttarakhand
-	Uttarakshi
+	Uttarkashi
 	Chamoli
 	Pithoragarh
 	Champawat
 	Udham_Singh_Nagar
 	Nainital
 	Garhwal
-	Hardwar
+	Haridwar
 	Dehradun
 	Tehri_Garhwal
 	Rudraprayag
 	Bageshwar
 	Almora
 ## Rajasthan
-	Ganganagar
+	Sri_Ganganagar
 	Hanumangarh
 	Churu
-	Jhunhjunun
+	Jhunjunu
 	Sikar
 	Jaipur
 	Alwar
 	Bharatpur
-	Dhaulpur
+	Dholpur
 	Karauli
 	Sawai_Madhopur
 	Kota
 	Baran
 	Jhalawar
-	Chittaurgarh
+	Chittorgarh
 	Bhilwara
 	Pratapgarh
 	Banswara
 	Dungarpur
 	Udaipur
 	Sirohi
-	Jalor
+	Jalore
 	Barmer
 	Jaisalmer
 	Bikaner
 	Jodhpur
-	Nagaru
+	Nagaur
 	Ajmer
 	Tonk
 	Dausa
@@ -310,7 +310,7 @@
 	Surat
 	Bharuch
 	Anand
-	Ahmadabad
+	Ahmedabad
 	Bhavnagar
 	Amreli
 	Junagadh
@@ -319,33 +319,33 @@
 	Rajkot
 	Surendranagar
 	Patan
-	Banas_Kantha
-	Sabar_Kantha
-	Panch_Mahals
-	Dohad
-	Vadadora
+	Banaskantha
+	Sabarkantha
+	Panchmahal
+	Dahod
+	Vadodara
 	Narmada
 	Tapi
-	The_Dangs
+	Dang
 	Kheda
 	Gandhinagar
-	Mahesana
-	Kachchh
+	Mehsana
+	Kutch
 ## Maharashtra
-	Sindhugurg
+	Sindhudurg
 	Ratnagiri
-	Raigarh
+	Raigad
 	Thane
 	Mumbai
 	Nashik
 	Dhule
 	Nandurbar
 	Jalgaon
-	Buldana
+	Buldhana
 	Amravati
 	Nagpur
 	Bhandara
-	Gondiya
+	Gondia
 	Gadchiroli
 	Chandrapur
 	Yavatmal
@@ -357,10 +357,10 @@
 	Kolhapur
 	Satara
 	Pune
-	Ahmadnagar
+	Ahmednagar
 	Aurangabad_Maharastra
 	Jaina
-	Bid
+	Beed
 	Parbhani
 	Hingoli
 	Washim
@@ -374,16 +374,16 @@
 	Gulbarga
 	Yadgir
 	Raichur
-	Bellary
+	Bellari
 	Chitradurga
 	Tumkur
-	Chikkaballapura
+	Chikkaballapur
 	Kolar
-	Bangalore_Rural
-	Bangalore
+	Bengaluru_Rural
+	Bengaluru
 	Ramanagara
 	Chamarajanagar
-	Mysore
+	Mysuru
 	Kodagu
 	Dakshina_Kannada
 	Udupi
@@ -395,7 +395,7 @@
 	Gadag
 	Dharwad
 	Haveri
-	Shimoga
+	Shivamogga
 	Davanagere
 	Chikmagalur
 	Hassan
@@ -409,42 +409,42 @@
 	Krishna
 	Guntur
 	Prakasam
-	Sri_Potti_Sriramulu_Nellore
+	Nellore
 	Chittoor
 	Anantapur
 	Kurnool
-	Y_S_R
+	YSR_Kadapa
 ## Telangana
 	Hyderabad
 	Adilabad
 	Karimnagar
 	Khammam
-	Mahbubnagar
+	Mahabubnagar
 	Medak
 	Nalgonda
 	Nizamabad
-	Rangareddi
+	Rangareddy
 	Warangal
 ## Tamil Nadu
-	Thiruvallur
+	Tiruvallur
 	Chennai
-	Kancheepuram
+	Kanchipuram
 	Viluppuram
 	Cuddalore
 	Nagapattinam
-	Thiruvarur
+	Tiruvarur
 	Thanjavur
 	Pudukkottai
 	Ramanathapuram
-	Thoothukkudi
+	Thoothukudi
 	Tirunelveli
 	Kanniyakumari
 	Virudhunagar
 	Theni
-	Dingugul
+	Dindigul
 	Tiruppur
 	Coimbatore
-	The_Nilgiris
+	Nilgiris
 	Erode
 	Salem
 	Dharmapuri
@@ -453,13 +453,13 @@
 	Tiruvannamalai
 	Perambalur
 	Ariyalur
-	Tiruchinappalli
+	Tiruchirappalli
 	Karur
 	Namakkal
 	Sivagangai
 	Madurai
 ## Kerala
-	Kasargod
+	Kasaragod
 	Kannur
 	Wayanad
 	Kozhikode
@@ -473,21 +473,21 @@
 	Pathanamthitta
 	Kollam
 	Thiruvananthapuram
-## Orissa
+## Odisha
 	Malkangiri
 	Koraput
-	Nabarangapur
+	Nabarangpur
 	Kalahandi
 	Nuapada
 	Bargarh
 	Jharsuguda
 	Sundargarh
-	Kendujhar
+	Keonjhar
 	Mayurbhanj
-	Baleshwar
+	Balasore
 	Bhadrak
 	Kendrapara
-	Jagatsinghapur
+	Jagatsinghpur
 	Puri
 	Khordha
 	Ganjam
@@ -497,21 +497,21 @@
 	Balangir
 	Subarnapur
 	Sambalpur
-	Debagarh
-	Anugul
+	Deogarh
+	Angul
 	Dhenkanal
-	Jajapur
+	Jajpur
 	Cuttack
 	Nayagarh
-	Baudh
-## Chattisgarh
-	Dakshin_Bastar_Dantewada
+	Boudh
+## Chhattisgarh
+	Dantewada
 	Bijapur
 	Narayanpur
-	Uttar_Bastar_Kanker
+	Kanker
 	Rajnandgaon
-	Kabeerdham
-	Bilaspur
+	Kabirdham
+	Bilaspur_CG
 	Koriya
 	Surguja
 	Jashpur
@@ -521,7 +521,7 @@
 	Dhamtari
 	Bastar
 	Durg
-	Janjgir
+	Janjgir_Champa
 	Korba
 ## Madhya Pradesh
 	Alirajpur
@@ -556,9 +556,9 @@
 	Seoni
 	Chhindwara
 	Betul
-	East_Nimar
+	Khandwa
 	Burhanpur
-	West_Nimar
+	Khargone
 	Barwani
 	Dhar
 	Indore
@@ -569,7 +569,7 @@
 	Raisen
 	Harda
 	Hoshangabad
-	Narsimhapur
+	Narsinghpur
 	Damoh
 	Katni
 	Umaria
@@ -584,43 +584,43 @@
 	Mathura
 	Aligarh
 	Bulandshahr
-	GBN_Faridabad
+	GBN_Noida
 	Ghaziabad
-	Baghpat
+	Bagpat
 	Muzaffarnagar
 	Saharanpur
 	Bijnor
-	Phule
+	Amroha
 	Rampur
 	Bareilly
 	Pilibhit
-	Kheri
+	Lakhimpur_Kheri
 	Bahraich
-	Shrawasti
-	Balrampur
+	Shravasti
+	Balarampur
 	Siddharthnagar
-	Mahraganj
+	Mahrajganj
 	Kushinagar
 	Deoria
 	Ballia
 	Ghazipur
-	Chandraili
+	Chandauli
 	Sonbhadra
 	Mirzapur
 	Allahabad
 	Chitrakoot
 	Banda
 	Mahoba
-	Hamirpur
+	Hamirpur_UP
 	Kanpur_Dehat
 	Kannauj
 	Mainpuri
 	Firozabad
 	Etah
-	Mahamaya_Nagar
-	Kanshiram_Nagar
+	Hathras
+	Kasganj
 	Budaun
-	Jyotiba_Nagar
+	Amroha
 	Meerut
 	Farrukhabad
 	Shahjahanpur
@@ -629,10 +629,10 @@
 	Kanpur_Nagar
 	Unnao
 	Lucknow
-	Bara_Banki
+	Barabanki
 	Gonda
 	Basti
-	SKN
+	Sant_Kabir_Nagar
 	Gorakhpur
 	Mau
 	Azamgarh
@@ -641,7 +641,7 @@
 	SRNB
 	Kaushambi
 	Fatehpur
-	Rae_Bareli
+	Raebareli
 	Pratapgarh
 	Sultanpur
 	Faizabad
@@ -656,7 +656,7 @@
 ## Lakshadweep
 	Lakshadweep
 ## Puducherry
-	Pondicherry
+	Puducherry
 	Karaikal
 	Yanam
 	Mahe

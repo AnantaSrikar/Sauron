@@ -30,13 +30,13 @@ def get_dateTime():
 tokens = getTokens()
 
 def start(update, context): # this will be a command, invoked by /start, message replied will as below
-	if(update.message.chat.id != -479059156 and update.message.chat.id != 648854668):
+	if(isPM(update)):
 		update.message.reply_text("{} I don't do PMs, come over to the main group".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 	else:
 		update.message.reply_text("Hey there {}! I'm still awake! Try /help for more intel.".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 
 def help(update, context): # help command, would directly send the reply as in res/bot_intro
-	if(update.message.chat.id != -479059156 and update.message.chat.id != 648854668):
+	if(isPM(update)):
 		update.message.reply_text("{} I don't do PMs, come over to the main group".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 	else:
 		fileManager = open('res/bot_intro.txt', 'r')
@@ -48,12 +48,16 @@ def lowerAll(daList):
 	for i in range(len(daList)):
 		daList[i] = daList[i].lower()
 
+def isPM(update):
+	if(update.message.chat.id == -479059156 or update.message.chat.id == 648854668 or update.message.chat.id == -1001200112812):
+		return False
+
 def databaseUpdates(update, context): # this is the one that handles the regular messages, unlike commands, we have mor econtrol over them
 	#update.message gives us the message, and update.message.text gives us the exact text
 	#the update.message has more attributes to it like from_user which gives us the user, and more can be done with that
 	username = update.message.from_user.full_name
 	user_id = update.message.from_user.id
-	if(update.message.chat.id != -479059156 and update.message.chat.id != 648854668): # TODO : add group link once made
+	if(isPM(update)):
 		update.message.reply_text("{} I don't do PMs, come over to the main group".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 	
 	else:
@@ -97,7 +101,7 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 
 		elif(update.message.text.startswith('#getLink')): #send the link, will change it to view only link once in action
 			# TODO : send a 'view only' link
-			update.message.reply_text('This is the link : {}'.format(tokens[1]))
+			update.message.reply_text('This is the link : {}'.format(tokens[2]))
 		
 		elif(update.message.text.startswith('#chatID')):
 			update.message.reply_text('ChatID = {}'.format(update.message.chat.id))

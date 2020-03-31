@@ -18,6 +18,17 @@ Ex : #death Delhi Delhi 1 toi.com
 
 /help : To get this helpBox
 
+A few VERY important instructions:
+
+1. In case the district data is unavailable, type in "dist_na" in place of the district
+
+2. Replace ALL the spaces in the state/district name with an underscore ("_")
+ Ex : Jammu and Kashmir becomes Jammu_and_Kashmir, West Bengal becomes West_Bengal
+
+3. Always check the sources for re-reports and only mention the very trusted sources (official tweets work).
+
+4. *NO SPAMMING, WE MEAN IT.*
+
 Don't ping the mods unnecessarily.
 Have fun!
 

@@ -100,8 +100,10 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 			context.bot.send_document(update.message.chat.id, document = open('res/districts.txt', 'rb'), reply_to_message_id = update.message.message_id)
 
 		elif(update.message.text.startswith('#getLink')): #send the link, will change it to view only link once in action
-			# TODO : send a 'view only' link
 			update.message.reply_text('This is the link : {}'.format(tokens[2]))
+
+		elif(update.message.text.startswith('#sources')):
+			context.bot.send_document(update.message.chat.id, document = open('res/sources.txt', 'rb'), reply_to_message_id = update.message.message_id)
 		
 		elif(update.message.text.startswith('#chatID')):
 			update.message.reply_text('ChatID = {}'.format(update.message.chat.id))

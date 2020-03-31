@@ -12,9 +12,14 @@ Ex: #infected Maharashtra Pune 4 toi.com
 Ex : #death Delhi Delhi 1 toi.com
 
 #getLink : to get the link of the sheet
+
 #reportError : to report an error
+
 #leaderBoard : To see the top contributors
-#districtList : get the list of valid state and district entries
+
+#districtList : Gives list of valid state and district entries
+
+#sources : Gives the list of reliable sources
 
 /help : To get this helpBox
 

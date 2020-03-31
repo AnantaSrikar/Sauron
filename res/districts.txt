@@ -387,7 +387,7 @@
 	Kodagu
 	Dakshina_Kannada
 	Udupi
-	Uttara
+	Uttara_Kannada
 	Belgaum
 	Bijapur
 	Bagalkot

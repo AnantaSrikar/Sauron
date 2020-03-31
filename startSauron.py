@@ -3,8 +3,11 @@ from telegram.ext import CommandHandler, MessageHandler, Filters
 from datetime import datetime
 import schedule
 import time
+import logging
 from utils import pushToSheet, scoreManager
 from utils.validateDetails import refreshDataList
+
+logging.basicConfig(filename = 'res/complete.log', level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 markdown = "Markdown" # just telegram API things, will be used below to reply to a user's message
 
@@ -102,8 +105,11 @@ def main():
 	dispatcher.add_handler(MessageHandler(Filters.text, databaseUpdates)) # for all messages
 
 	print('Bot started running!')
-
+	
 	updater.start_polling() # Starts the bot
+
+	logger = logging.getLogger()
+	logger.setLevel(logging.DEBUG)
 
 	while True:
 		schedule.run_pending()

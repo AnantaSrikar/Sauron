@@ -18,17 +18,23 @@ def death_update(dataList): #used in startSauron.py
 	next_row = next_available_row(sheet)
 	column = "A"
 	i = 1
-	if(verifyStateDistrict(dataList[3], dataList[4]) == 0 and verifySpam(dataList[3], dataList[4], 'death')):
+	try:
+		suggestions = verifyStateDistrict(dataList[3], dataList[4])[1]
+	except:
+		pass
+
+	if(verifyStateDistrict(dataList[3], dataList[4])[0] == 0 and verifySpam(dataList[3], dataList[4], 'death')):
 		while(column < "H"):
 			if(column != "E"):
 				sheet.update_acell("{}{}".format(column,next_row), dataList[i]) #this is what pushes the data to the sheet
 				i += 1
 			column = chr(ord(column) + 1)  # we cant do column += 1 since it's a char, this is the only way to increase it
 		return ['I have updated my database successfully!', True]
-	elif(verifyStateDistrict(dataList[3], dataList[4]) == 1):
-		return ['Unable to find {} in {}, please check and try again'.format(dataList[4], dataList[3]), False]
-	elif(verifyStateDistrict(dataList[3], dataList[4]) == 2):
-		return ['Unable to find {}, please check and try again'.format(dataList[3]), False]
+	
+	elif(verifyStateDistrict(dataList[3], dataList[4])[0] == 1):
+		return ['Unable to find {} in {}, please check and try again\nPossible suggestions:\n{}'.format(dataList[4], dataList[3], suggestions), False]
+	elif(verifyStateDistrict(dataList[3], dataList[4])[0] == 2):
+		return ['Unable to find {}, please check and try again\nPossible suggestions:\n{}'.format(dataList[3], suggestions), False]
 	else:
 		return ['This is already reported. Be more careful next time', False]
 	
@@ -38,16 +44,22 @@ def infection_update(dataList): # this too is used in startSauron.py, very simil
 	next_row = next_available_row(sheet)
 	column = "A"
 	i = 1
-	if(verifyStateDistrict(dataList[3], dataList[4]) == 0 and verifySpam(dataList[3], dataList[4], 'infection')):
+	try:
+		suggestions = verifyStateDistrict(dataList[3], dataList[4])[1]
+	except:
+		pass
+	
+	if(verifyStateDistrict(dataList[3], dataList[4])[0] == 0 and verifySpam(dataList[3], dataList[4], 'infection')):
 		while(column < "H"):
 			if(column != "F"):
 				sheet.update_acell("{}{}".format(column,next_row), dataList[i])
 				i += 1
 			column = chr(ord(column) + 1)
 		return ['I have updated my database successfully!', True]
-	elif(verifyStateDistrict(dataList[3], dataList[4]) == 1):
-		return ['Unable to find {} in {}, please check and try again'.format(dataList[4], dataList[3]), False]
-	elif(verifyStateDistrict(dataList[3], dataList[4]) == 2):
-		return ['Unable to find {}, please check and try again'.format(dataList[3]), False]
+		
+	elif(verifyStateDistrict(dataList[3], dataList[4])[0] == 1):
+		return ['Unable to find {} in {}, please check and try again\nPossible suggestions:\n{}'.format(dataList[4], dataList[3], suggestions), False]
+	elif(verifyStateDistrict(dataList[3], dataList[4])[0] == 2):
+		return ['Unable to find {}, please check and try again\nPossible suggestions:\n{}'.format(dataList[3], suggestions), False]
 	else:
 		return ['This is already reported. Be more careful next time', False]

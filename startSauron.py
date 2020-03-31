@@ -43,6 +43,10 @@ def help(update, context): # help command, would directly send the reply as in r
 		bot_intro = fileManager.read()
 		update.message.reply_text(bot_intro)
 		fileManager.close()
+	
+def lowerAll(daList):
+	for i in range(len(daList)):
+		daList[i] = daList[i].lower()
 
 def databaseUpdates(update, context): # this is the one that handles the regular messages, unlike commands, we have mor econtrol over them
 	#update.message gives us the message, and update.message.text gives us the exact text
@@ -53,6 +57,7 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 	else:
 		if(update.message.text.startswith('#infected')): 
 			infectionData = update.message.text.split(' ')
+			lowerAll(infectionData)
 			if(len(infectionData) != 5):# infectionData = ['#infected', state, district, count, link]
 				update.message.reply_text('Invalid format, please try again') # state district number link
 			else:
@@ -65,6 +70,7 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 
 		elif(update.message.text.startswith('#death')): # similar to #infected (sorry for being lazy)
 			deathData = update.message.text.split(' ')
+			lowerAll(deathData)
 			if(len(deathData) != 5):
 				update.message.reply_text('Invalid format, please try again')
 			else:

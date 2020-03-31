@@ -1,7 +1,10 @@
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from datetime import datetime
+import schedule
+import time
 from utils import pushToSheet, scoreManager
+from utils.validateDetails import refreshDataList
 
 markdown = "Markdown" # just telegram API things, will be used below to reply to a user's message
 
@@ -12,6 +15,9 @@ def getTokens():
 	tokenText = fileManager.read()
 	tokens = tokenText.split('\n') # tokens[0] = token for bot, token[1] = url for editing sheet, gitigored the file
 	return tokens
+
+def job():
+	print('Hey, its gonna work')
 
 def get_dateTime():
 	date = datetime.now().strftime("%d/%m/20%y")
@@ -89,6 +95,8 @@ def main():
 
 	dispatcher = updater.dispatcher # this too
 
+	schedule.every(2).hours.do(refreshDataList)
+
 	dispatcher.add_handler(CommandHandler('start', start)) #for adding a command, we need to do this, start is the function declared above
 	dispatcher.add_handler(CommandHandler('help', help)) # similarly for help, the string is the command that invokes the function
 	dispatcher.add_handler(MessageHandler(Filters.text, databaseUpdates)) # for all messages
@@ -96,6 +104,10 @@ def main():
 	print('Bot started running!')
 
 	updater.start_polling() # Starts the bot
+
+	while True:
+		schedule.run_pending()
+		time.sleep(1)
 
 	updater.idle() # Stops the bot gracefully
 

@@ -36,8 +36,12 @@ def verifyStateDistrict(stateName, districtName): # this fuction is used in the 
 entryList = []
 
 def refreshDataList():
+	global entryList
 	entryList = []
-	# TODO : remove res/antiSpam.json periodically, every 2 hours
+	try:
+		os.remove('res/antiSpam.json')
+	except:
+		pass
 
 def reloadSpamData():
 	try:

@@ -51,6 +51,8 @@ def lowerAll(daList):
 def databaseUpdates(update, context): # this is the one that handles the regular messages, unlike commands, we have mor econtrol over them
 	#update.message gives us the message, and update.message.text gives us the exact text
 	#the update.message has more attributes to it like from_user which gives us the user, and more can be done with that
+	username = update.message.from_user.full_name
+	user_id = update.message.from_user.id
 	if(update.message.chat.id != -479059156 and update.message.chat.id != 648854668): # TODO : add group link once made
 		update.message.reply_text("{} I don't do PMs, come over to the main group".format(update.message.from_user.mention_markdown()), parse_mode = markdown)
 	
@@ -62,10 +64,12 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 				update.message.reply_text('Invalid format, please try again') # state district number link
 			else:
 				infectionData.insert(1, get_dateTime()[0])
-				infectionData.insert(2, get_dateTime()[1]) # infectionData = ['#infected', date, time, state, district, count, link]
+				infectionData.insert(2, get_dateTime()[1]) 
+				infectionData.insert(7, user_id)
+				infectionData.insert(8, username) # infectionData = ['#infected', date, time, state, district, count, link, user_id, username]
 				result = pushToSheet.infection_update(infectionData)
 				if(result[1]):
-					scoreManager.updatePoints(update.message.from_user.id, update.message.from_user.full_name)
+					scoreManager.updatePoints(user_id, username)
 				update.message.reply_text(result[0])				
 
 		elif(update.message.text.startswith('#death')): # similar to #infected (sorry for being lazy)
@@ -76,9 +80,11 @@ def databaseUpdates(update, context): # this is the one that handles the regular
 			else:
 				deathData.insert(1, get_dateTime()[0])
 				deathData.insert(2, get_dateTime()[1])
+				deathData.insert(7, user_id)
+				deathData.insert(8, username)
 				result = pushToSheet.death_update(deathData)
 				if(result[1]):
-					scoreManager.updatePoints(update.message.from_user.id, update.message.from_user.full_name)
+					scoreManager.updatePoints(user_id, username)
 				update.message.reply_text(result[0])				
 
 		elif(update.message.text.startswith('#reportError')): #this still has ti be made (I need help)

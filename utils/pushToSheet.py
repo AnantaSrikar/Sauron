@@ -24,7 +24,7 @@ def death_update(dataList): #used in startSauron.py
 		pass
 
 	if(verifyStateDistrict(dataList[3], dataList[4])[0] == 0 and verifySpam(dataList[3], dataList[4], 'death')):
-		while(column < "H"):
+		while(column < "J"):
 			if(column != "E"):
 				sheet.update_acell("{}{}".format(column,next_row), dataList[i]) #this is what pushes the data to the sheet
 				i += 1
@@ -50,13 +50,13 @@ def infection_update(dataList): # this too is used in startSauron.py, very simil
 		pass
 	
 	if(verifyStateDistrict(dataList[3], dataList[4])[0] == 0 and verifySpam(dataList[3], dataList[4], 'infection')):
-		while(column < "H"):
+		while(column < "J"):
 			if(column != "F"):
 				sheet.update_acell("{}{}".format(column,next_row), dataList[i])
 				i += 1
 			column = chr(ord(column) + 1)
 		return ['I have updated my database successfully!', True]
-		
+
 	elif(verifyStateDistrict(dataList[3], dataList[4])[0] == 1):
 		return ['Unable to find {} in {}, please check and try again\nPossible suggestions:\n{}'.format(dataList[4], dataList[3], suggestions), False]
 	elif(verifyStateDistrict(dataList[3], dataList[4])[0] == 2):
